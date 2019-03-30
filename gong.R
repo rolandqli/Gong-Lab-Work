@@ -5,7 +5,7 @@ library(ggplot2)
 library(xlsx)
 library(dplyr)
 
-# Import counts table (received from Galaxy).
+# Import counts table.
 table <- read.table("combined_counts_table.txt")
 table <- select(table, starts_with("C"), starts_with("half"), starts_with("X1h"), 
                 starts_with("X2h"), starts_with("X3"),starts_with("X6"), 

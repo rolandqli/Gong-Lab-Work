@@ -42,10 +42,12 @@ dgeobj <- estimateTagwiseDisp(dgeobj)
 group <- unlist(lapply(strsplit(colnames(filtered), split = "_"), function(x)x[1]))
 group <- factor(group, levels = c("Control","halfhr", "X1hr", "X2hr",
                                   "X3hr","X6hr","X12hr","X24hr","X48hr"))
-# Plotting
+# Checking similarity between each sample.
 pdf("MDSPlot.pdf")
 plotMDS(dgeobj, labels = group, cex = .75, xlim= c(-2,4))
 dev.off()
+                       
+# Visualising variation.
 pdf("BCVPlot.pdf")
 plotBCV(dgeobj)
 dev.off()
